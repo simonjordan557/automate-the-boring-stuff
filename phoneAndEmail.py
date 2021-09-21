@@ -10,7 +10,7 @@ outputString = ''
 phonePattern = re.compile(r'(\+)?(44|0)(\d{4})(\s|-)?(\d{3})(\s|-)?(\d{3})')
 phoneMo = phonePattern.findall(inputText)
 
-if phoneMo == None:
+if len(phoneMo) == 0:
     outputString += 'NO PHONE NUMBERS FOUND.\n'
 else:
     outputString += 'PHONE NUMBERS FOUND:\n\n'
@@ -22,7 +22,7 @@ else:
 emailPattern = re.compile(r'([a-zA-Z0-9_.%-+]+)(@)([a-zA-Z]+)(\.)([a-zA-Z.]{2,5})')
 emailMo = emailPattern.findall(inputText)
 
-if emailMo == None:
+if len(emailMo) == 0:
     outputString += 'NO EMAIL ADDRESSES FOUND.\n'
 else:
     outputString += 'EMAIL ADDRESSES FOUND:\n\n'
@@ -33,7 +33,7 @@ else:
     
 
 pyperclip.copy(outputString)
-    
+
         
 
 
